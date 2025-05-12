@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and border are included in element dimensions */
+  }
+  
+  /* Make the HTML and body elements take up the full viewport height and width */
+  html, body {
+    height: 100%; /* Full height of the viewport */
+    width: 100%; /* Full width of the viewport */
+  }
+
+  

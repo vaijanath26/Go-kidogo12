@@ -1,0 +1,35 @@
+/* Header.module.css */
+.header {
+  width: 100%;
+  position: absolute; /* Changed from sticky to absolute */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: transparent; /* Semi-transparent white */
+  padding: 16px 0;
+  /* backdrop-filter: blur(8px); Optional: adds glass-like blur effect */
+}
+
+/* When scrolling, change to solid background */
+.header.scrolled {
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  position: fixed; /* Ensure it stays on top when scrolled */
+}
+
+/* Container inside the header */
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+/* Logo Styles */
+.logo {
+  width: 10%;
+  height: auto;
+}

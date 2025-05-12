@@ -1,0 +1,855 @@
+{
+	"info": {
+		"_postman_id": "ee1e5098-a856-4c8e-91e8-ecc8e0c45e82",
+		"name": "GreenDlvApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28888586"
+	},
+	"item": [
+		{
+			"name": "authcustomer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"usrid\":\"dkp@unipolar.in\",\r\n\"passwd\":\"Dkp1982Dkp\",\r\n\"deviceid\":\"testdevice\"\r\n}"
+				},
+				"url": {
+					"raw": "https://testapp.gokidogo.com/webapi/api.php/authcustomer",
+					"protocol": "https",
+					"host": [
+						"testapp",
+						"gokidogo",
+						"com"
+					],
+					"path": [
+						"webapi",
+						"api.php",
+						"authcustomer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "authcustomer_Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"usrid\":\"devkpandey@gmail.com\",\r\n\"passwd\":\"123456\",\r\n\"deviceid\":\"testdevice\"\r\n}"
+				},
+				"url": {
+					"raw": "https://testapp.gokidogo.com/webapi/api.php/Authentication/Login?email=devkpandey@gmail.com&password=Dev#$2022Dkp",
+					"protocol": "https",
+					"host": [
+						"testapp",
+						"gokidogo",
+						"com"
+					],
+					"path": [
+						"webapi",
+						"api.php",
+						"Authentication",
+						"Login"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "devkpandey@gmail.com"
+						},
+						{
+							"key": "password",
+							"value": "Dev"
+						}
+					],
+					"hash": "$2022Dkp"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "userprofile",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customer_ID\": \"1934406006\",\n    \"email\": \"devkpandey@gmail.com\",\n    \"apikey\": \"123456\",\n    \"deviceId\": \"testdevice\"\n}"
+				},
+				"url": {
+					"raw": "https://testapp.gokidogo.com/webapi/api.php/userprofile",
+					"protocol": "https",
+					"host": [
+						"testapp",
+						"gokidogo",
+						"com"
+					],
+					"path": [
+						"webapi",
+						"api.php",
+						"userprofile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "forgotpassword",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"devkpandey@gmail.com\",\n    \"apikey\": \"123456\",\n    \"deviceId\": \"testdevice\"\n}"
+				},
+				"url": {
+					"raw": "https://app.gokidogo.com/webapi/api.php/forgotpassword",
+					"protocol": "https",
+					"host": [
+						"app",
+						"gokidogo",
+						"com"
+					],
+					"path": [
+						"webapi",
+						"api.php",
+						"forgotpassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listaddresses",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"devkpandey@gmail.com\",\n    \"apikey\": \"123456\",\n    \"deviceId\": \"testdevice\"\n}"
+				},
+				"url": {
+					"raw": "https://testapp.gokidogo.com/webapi/api.php/listaddresses",
+					"protocol": "https",
+					"host": [
+						"testapp",
+						"gokidogo",
+						"com"
+					],
+					"path": [
+						"webapi",
+						"api.php",
+						"listaddresses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addaddress",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n  {\n\"CustId\": \"MFC-0001\",\n\"email\": \"devkpandey@gmail.com\",\n\"mobile\": \"9971019131\",\n\"addressName\": \"Add Navi Mumbai\",\n\"addressType\": \"Office\",\n\"houseno\": \"104\",\n\"floor\": \"3rd\",\n\"address\": \"3rd Floor Akshar Bluechip\",\n\"address2\": \"Turbhe Navi Mumbai\",\n\"street\": \"Turbhe Naka\",\n\"deliveryarea\": \"Turbhe\",\n\"zip\": \"400706\",\n\"state\": \"Maharashtra\",\n\"location\": \"Turbhe\",\n\"city\": \"Navi Mumbai\",\n\"company\": \"Unipolar Technologies\",\n\"ipadd\": \"122.122.122.122\",\n\"locationNo\": \"Loc123\",\n}\n"
+				},
+				"url": {
+					"raw": "https://testapp.gokidogo.com/webapi/api.php/addaddress",
+					"protocol": "https",
+					"host": [
+						"testapp",
+						"gokidogo",
+						"com"
+					],
+					"path": [
+						"webapi",
+						"api.php",
+						"addaddress"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update_addaddress",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n  {\n\"CustId\": \"MFC-0001\",\n\"email\": \"devkpandey@gmail.com\",\n\"mobile\": \"9971019131\",\n\"addressName\": \"Add Navi Mumbai\",\n\"addressType\": \"Office\",\n\"houseno\": \"104\",\n\"floor\": \"3rd\",\n\"address\": \"3rd Floor Akshar Bluechip\",\n\"address2\": \"Turbhe Navi Mumbai\",\n\"street\": \"Turbhe Naka\",\n\"deliveryarea\": \"Turbhe\",\n\"zip\": \"400706\",\n\"state\": \"Maharashtra\",\n\"location\": \"Turbhe\",\n\"city\": \"Navi Mumbai\",\n\"company\": \"Unipolar Technologies\",\n\"ipadd\": \"122.122.122.122\",\n\"locationNo\": \"Loc123\",\n\"country\": \"India\",\n\"addressid\":\"1\",\n\"deviceId\": \"testdevice\"\n  }\n"
+				},
+				"url": {
+					"raw": "https://testapp.gokidogo.com/webapi/api.php/updateaddress",
+					"protocol": "https",
+					"host": [
+						"testapp",
+						"gokidogo",
+						"com"
+					],
+					"path": [
+						"webapi",
+						"api.php",
+						"updateaddress"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove_addaddress",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n  {\n\"CustId\": \"MFC-0001\",\n\"email\": \"devkpandey@gmail.com\",\n\"addID\":\"29\",\n\"deviceId\": \"testdevice\"\n  }\n"
+				},
+				"url": {
+					"raw": "https://testapp.gokidogo.com/webapi/api.php/removeaddress",
+					"protocol": "https",
+					"host": [
+						"testapp",
+						"gokidogo",
+						"com"
+					],
+					"path": [
+						"webapi",
+						"api.php",
+						"removeaddress"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "customersignup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n\"title\": \"Mr\",\n\"lastname\": \"Pandey\",\n\"firstname\": \"DK\",\n\"gender\": \"M\",\n\"mobile\": \"99710191331\",\n\"email\": \"dkp@unipolar.in\",\n\"terms\": \"1\",\n\"newsl\": \"1\",\n\"passwd\": \"123456\",\n\"ipadd\": \"122.122.122.122\",\n\"smssub\": \"1\",\n\"emailOTPVerified\" : 1\n}"
+				},
+				"url": {
+					"raw": "https://testapp.gokidogo.com/webapi/api.php/customersignup",
+					"protocol": "https",
+					"host": [
+						"testapp",
+						"gokidogo",
+						"com"
+					],
+					"path": [
+						"webapi",
+						"api.php",
+						"customersignup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateuserprofile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"deviceId\" : \"321312364633\",\r\n\"apikey\" : \"321312364633\",\r\n\"customerId\" : \"MFC-0001\",\r\n\"user\" : \"MFC-0001\",\r\n\"email\" : \"devkpandey@gmail.com\",\r\n\"firstName\" : \"DK\",\r\n\"lastName\" : \"Pandey\",\r\n\"mobile\" : \"9971019131\",\r\n\"dateOfBirth\" : \"05-oct-1982\",\r\n\"title\" : \"Herr\",\r\n\"gender\" : \"M\"\r\n}"
+				},
+				"url": {
+					"raw": "https://testapp.gokidogo.com/webapi/api.php/updateuserprofile",
+					"protocol": "https",
+					"host": [
+						"testapp",
+						"gokidogo",
+						"com"
+					],
+					"path": [
+						"webapi",
+						"api.php",
+						"updateuserprofile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchrestaurent",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"deviceId\": \"321312364633\",\n  \"latitude\": \"\",\n  \"longitude\": \"\",\n  \"stext\": \"sushi\",\n  \"sorting\": \"distance\",\n  \"country\": \"India\",\n  \"zipcode\": \"400614\",\n  \"location\": \"\",\n  \"user\": \"830481533\",\n  \"ipadd\": \"122.122.122.122\"\n}"
+				},
+				"url": {
+					"raw": "https://testapp.gokidogo.com/webapi/api.php/searchrestaurent",
+					"protocol": "https",
+					"host": [
+						"testapp",
+						"gokidogo",
+						"com"
+					],
+					"path": [
+						"webapi",
+						"api.php",
+						"searchrestaurent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "userhome",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"deviceId\": \"321312364633\",\n  \"location\": \"\",\n  \"zipcode\": \"400614\",\n  \"user\": \"830481533\",\n  \"email\": \"asho251@gmail.com\",\n  \"latitude\": \"\",\n  \"longitude\": \"\"\n}"
+				},
+				"url": {
+					"raw": "https://testapp.gokidogo.com/webapi/api.php/userhome",
+					"protocol": "https",
+					"host": [
+						"testapp",
+						"gokidogo",
+						"com"
+					],
+					"path": [
+						"webapi",
+						"api.php",
+						"userhome"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sendotpemail",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"deviceId\": \"321312364633\",\n\"email\": \"devkpandey@gmail.com\"\n}"
+				},
+				"url": {
+					"raw": "https://testapp.gokidogo.com/webapi/api.php/sendotpemail",
+					"protocol": "https",
+					"host": [
+						"testapp",
+						"gokidogo",
+						"com"
+					],
+					"path": [
+						"webapi",
+						"api.php",
+						"sendotpemail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sendotpemailSG",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"deviceId\": \"321312364633\",\n\"apikey\": \"321312364633\",\n\"email\": \"devkpandey@gmail.com\"\n}"
+				},
+				"url": {
+					"raw": "https://testapp.gokidogo.com/webapi/api.php/sendotpemailSG",
+					"protocol": "https",
+					"host": [
+						"testapp",
+						"gokidogo",
+						"com"
+					],
+					"path": [
+						"webapi",
+						"api.php",
+						"sendotpemailSG"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_payment_methods",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"deviceid\" : \"321312364633\",\n\"apikey\" : \"321312364633\",\n\"email\" : \"dkpandey@unipolar.in\",\n\"custdid\" : \"GK-0001\"\n}"
+				},
+				"url": {
+					"raw": "https://testapp.gokidogo.com/webapi/api.php/get_payment_methods",
+					"protocol": "https",
+					"host": [
+						"testapp",
+						"gokidogo",
+						"com"
+					],
+					"path": [
+						"webapi",
+						"api.php",
+						"get_payment_methods"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "verifyotpemail",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"deviceId\": \"321312364633\",\n\"email\": \"sachin.p@threepreneur.in\",\n\"otp\":\"810863\"\n}"
+				},
+				"url": {
+					"raw": "https://testapp.gokidogo.com/webapi/api.php/verifyotpemail",
+					"protocol": "https",
+					"host": [
+						"testapp",
+						"gokidogo",
+						"com"
+					],
+					"path": [
+						"webapi",
+						"api.php",
+						"verifyotpemail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "checkdelivery",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"apikey\": \"321312364633\",\n\"deviceId\": \"deviceId\",\n\"RestroId\": \"1\", \n\"zipcode\":\"61350\"\n}"
+				},
+				"url": {
+					"raw": "https://testapp.gokidogo.com/webapi/api.php/checkdelivery",
+					"protocol": "https",
+					"host": [
+						"testapp",
+						"gokidogo",
+						"com"
+					],
+					"path": [
+						"webapi",
+						"api.php",
+						"checkdelivery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "home",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"deviceId\": \"321312364633\",\n\"latitude\": \"321312364633\",\n\"longitude\": \"321312364633\",\n\"location\": \"Frankfurt\",\n\"user\": \"123456\",\n\"email\": \"devkpandey@gmail.com\",\n\"zipcode\": \"61348\",\n\"sorting\": \"\",\n\"country\":\"\"\n}"
+				},
+				"url": {
+					"raw": "https://testapp.gokidogo.com/webapi/api.php/home",
+					"protocol": "https",
+					"host": [
+						"testapp",
+						"gokidogo",
+						"com"
+					],
+					"path": [
+						"webapi",
+						"api.php",
+						"home"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "tiffindetails",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"deviceId\": \"321312364633\",\n\"apikey\": \"321312364633\",\n\"user\": \"1711187635\",\n\"email\": \"asho251@gmail.com\"\n}\n"
+				},
+				"url": {
+					"raw": "https://testapp.gokidogo.com/webapi/api.php/tiffindetails",
+					"protocol": "https",
+					"host": [
+						"testapp",
+						"gokidogo",
+						"com"
+					],
+					"path": [
+						"webapi",
+						"api.php",
+						"tiffindetails"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "customer_tiffin_assign",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"deviceId\": \"321312364633\",\n\"apikey\": \"321312364633\",\n\"CustomerId\": \"MFC001\",\n\"email\": \"devkpandey@gmail.com\",\n\"RastaurantId\": \"1\",\n\"OrderId\": \"GK20230106-004\",\n\"Tiffins\": \"63b5745a92b9363b5745a92b95\"\n}"
+				},
+				"url": {
+					"raw": "https://testapp.gokidogo.com/webapi/api.php/customer_tiffin_assign",
+					"protocol": "https",
+					"host": [
+						"testapp",
+						"gokidogo",
+						"com"
+					],
+					"path": [
+						"webapi",
+						"api.php",
+						"customer_tiffin_assign"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "packaging_types",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"deviceId\": \"321312364633\",\n\"apikey\": \"321312364633\",\n\"RastaurantId\": \"1\"\n}\n"
+				},
+				"url": {
+					"raw": "https://testapp.gokidogo.com/webapi/api.php/packaging_types",
+					"protocol": "https",
+					"host": [
+						"testapp",
+						"gokidogo",
+						"com"
+					],
+					"path": [
+						"webapi",
+						"api.php",
+						"packaging_types"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "giverating",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"deviceId\": \"321312364633\",\n\"apikey\": \"321312364633\",\n\"user\": \"MFC001\",\n\"email\": \"ashutosh.m@threepreneur.in\",\n\"restroid\": \"1\",\n\"item\": \"item1\",\n\"rating\":\"5\",\n\"comment\":\"Test Rating\",\n\"orderno\" : \"GK20221127-003\"\n}"
+				},
+				"url": {
+					"raw": "https://testapp.gokidogo.com/webapi/api.php/giverating",
+					"protocol": "https",
+					"host": [
+						"testapp",
+						"gokidogo",
+						"com"
+					],
+					"path": [
+						"webapi",
+						"api.php",
+						"giverating"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getdriverlocation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"deviceId\": \"321312364633\",\n\"apikey\": \"321312364633\",\n\"orderid\" : \"GK20230130-003\"\n}"
+				},
+				"url": {
+					"raw": "https://testapp.gokidogo.com/webapi/api.php/getdriverlocation",
+					"protocol": "https",
+					"host": [
+						"testapp",
+						"gokidogo",
+						"com"
+					],
+					"path": [
+						"webapi",
+						"api.php",
+						"getdriverlocation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "orderhistory",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"deviceId\" : \"321312364633\",\n\"apikey\" : \"321312364633\",\n\"user\" : \"\",\n\"email\" : \"asho251@gmail.com\",\n\"limit\" : \"20\"\n}"
+				},
+				"url": {
+					"raw": "https://testapp.gokidogo.com/webapi/api.php/orderhistory",
+					"protocol": "https",
+					"host": [
+						"testapp",
+						"gokidogo",
+						"com"
+					],
+					"path": [
+						"webapi",
+						"api.php",
+						"orderhistory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "restaurentdetail",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"deviceId\": \"1231231234\",\n\"latitude\": \"7435242355\",\n\"longitude\": \"774635423r\",\n\"restid\": \"1\",\n\"restname\": \"Sushi Sensei\",\n\"user\": \"123456\",\n\"ipadd\": \"122.122.122.122\"\n}"
+				},
+				"url": {
+					"raw": "https://testapp.gokidogo.com/webapi/api.php/restaurentdetail",
+					"protocol": "https",
+					"host": [
+						"testapp",
+						"gokidogo",
+						"com"
+					],
+					"path": [
+						"webapi",
+						"api.php",
+						"restaurentdetail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "checkout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\n    \"Order\": [\n      {\n        \"customer_ID\": \"test123\",\n        \"order_type\": \"Delivery\",\n        \"salutation\": \"Herr\",\n        \"First_Name\": \"DK\",\n        \"Last_Name\": \"Pandey\",\n        \"Name\": \"DK Pandey\",\n        \"Phone\": \"09971019131\",\n        \"email\": \"devkpandey@gmail.com\",\n        \"street\": \"Turbhe\",\n        \"street_no\": \"str112\",\n        \"remark\": \"Test Dkp\",\n        \"payment_type\": \"cash\",\n        \"time_rebate\": \"10\",\n        \"delivery_area_id\": \"2\",\n        \"delivery_area_ZIP\": \"60320\",\n        \"City\": \"Dornbusch\",\n        \"State\" : \"Dornbusch\",\n        \"Location\" : \"Dornbusch\",\n        \"min_order\": \"10.00,- €\",\n        \"get_Free_From\": \"0.00\",\n        \"house_number\": \"103\",\n        \"payment_price\": \"0\",\n        \"firm_name\": \"Unipolar Technologies Pvt. Ltd.\",\n        \"floor_no\": \"4th Floor\",\n        \"net_amt\": \"82.43\",\n        \"current_discount\": \"0.1\",\n        \"Delivery_time\": \"15:44\",\n        \"discount\": \"8.82\",\n        \"promo_code\" : \"PROMO1\",\n        \"promoDiscount\": \"0\",\n        \"net_after_discount\": \"79.38\",\n        \"vat_normal\": \"0.07\",\n        \"vat_007_after_dsicount\": \"5.19\",\n        \"vat_019_after_dsicount\": \"0.00\",\n        \"vat_total_after_dsicount\": \"5.19\",\n        \"tiffin_cost\": \"\",\n        \"total\": \"79.40\",\n        \"delivery_charge\": \"0.00\",\n        \"final_amount\": \"79.40\",\n        \"Restaurant\": \"1\",\n        \"Restaurant_location\": \"2\",\n        \"currency\" : \"€\",\n        \"attendedBy\" : \"\",\n        \"DeviceId\" : \"Device123\",\n        \"TipAmt\" : \"5\"\n      }\n    ],\n    \"details\": [\n        {\n        \"toppos\": \"0\",\n        \"is_addon\": \"0\",\n        \"id\": \"1\",\n        \"product_id\": \"419\",\n        \"sku\": \"SS124\",\n        \"name\": \"Far East Poke\",\n        \"short_name\": \"Far East  ...\",\n        \"price\": \"11.50\",\n        \"count\": \"1\",\n        \"sum\": \"11.50\",\n        \"pax\" : \"\"\n      },\n      {\n        \"toppos\": \"0\",\n        \"is_addon\": \"0\",\n        \"id\": \"2\",\n        \"product_id\": \"418\",\n        \"sku\": \"SS123\",\n        \"name\": \"Buddha Bowl Vegan\",\n        \"short_name\": \"Buddha Bo ...\",\n        \"price\": \"11.50\",\n        \"count\": \"1\",\n        \"sum\": \"11.50\",\n        \"pax\" : \"\"\n      },\n      {\n        \"toppos\": \"0\",\n        \"is_addon\": \"0\",\n        \"id\": \"3\",\n        \"product_id\": \"3\",\n        \"sku\": \"SS003\",\n        \"name\": \"Protein XXL\",\n        \"short_name\": \"Protein X ...\",\n        \"price\": \"29.90\",\n        \"count\": \"1\",\n        \"sum\": \"29.90\",\n        \"pax\" : \"\"\n      },\n      {\n        \"toppos\": \"0\",\n        \"is_addon\": \"0\",\n        \"id\": \"4\",\n        \"product_id\": \"5\",\n        \"sku\": \"SS005\",\n        \"name\": \"Vital Selection\",\n        \"short_name\": \"Vital Sel ...\",\n        \"price\": \"8.90\",\n        \"count\": \"1\",\n        \"sum\": \"8.90\",\n        \"pax\" : \"\"\n      },\n      {\n        \"toppos\": \"0\",\n        \"is_addon\": \"0\",\n        \"id\": \"5\",\n        \"product_id\": \"22\",\n        \"sku\": \"SS022\",\n        \"name\": \"Spezial Box\",\n        \"short_name\": \"Spezial B ...\",\n        \"price\": \"14.90\",\n        \"count\": \"1\",\n        \"sum\": \"14.90\",\n        \"pax\" : \"\"\n      }\n    ]\n  }"
+				},
+				"url": {
+					"raw": "https://testapp.gokidogo.com/webapi/api.php/checkout",
+					"protocol": "https",
+					"host": [
+						"testapp",
+						"gokidogo",
+						"com"
+					],
+					"path": [
+						"webapi",
+						"api.php",
+						"checkout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "checkout_trim",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Order\": [\n        {\n            \"Apikey\": \"197f18eb0e636809bfac6621017f7c212b7738e0f06b6492e00d14ab0f10683e000c276e9e0685137bf2c021a306170d95e411db0c1e70c1b76a1f6bee18e411\",\n            \"Delivery_time\": \"07:32 pm\",\n            \"DeviceId\": \"6e2a1f39237cca2a\",\n            \"First_Name\": \"Yuvraj\",\n            \"Last_Name\": \"Musale\",\n            \"Name\": \"Yuvraj Musale\",\n            \"Phone\": \"+919892956082\",\n            \"Restaurant\": \"1\",\n            \"Restaurant_location\": \"Hansaallee 162\",\n            \"TipAmt\": 0,\n            \"address_id\": \"107\",\n            \"currency\": \"€\",\n            \"customer_ID\": \"322037901\",\n            \"delivery_charge\": 4,\n            \"delivery_date\": \"\",\n            \"email\": \"musaleyuvraj877@gmail.com\",\n            \"final_amount\": 12.399999999999999,\n            \"order_type\": \"Delivery\",\n            \"packaging\": 2,\n            \"payment_price\": 0,\n            \"payment_type\": \"COD\",\n            \"promo_code\": \"\",\n            \"remark\": null,\n            \"total\": 12.399999999999999\n        }\n    ],\n    \"details\": [\n        {\n            \"actual_addon_price\": 0,\n            \"addons\": \"\",\n            \"addonsPrice\": 0,\n            \"allergy_info\": [Array\n            ],\n            \"category\": \"Specials\",\n            \"category_id\": \"18\",\n            \"category_weight\": null,\n            \"description\": \"Gefüllte Tofutasche\",\n            \"grandTotal\": 4.6,\n            \"id\": \"86\",\n            \"image\": \"https://www.gokidogo.de/images/menu/2808.png\",\n            \"isSelected\": true,\n            \"is_addon\": 0,\n            \"maxaddon\": 0,\n            \"name\": \"Inari\",\n            \"pax\": \"\",\n            \"price\": 2.3,\n            \"product_id\": 1856,\n            \"quantity\": 2,\n            \"sku\": \"SS086\",\n            \"tax_rate\": 7\n        },\n        {\n            \"actual_addon_price\": 0,\n            \"addons\": \"\",\n            \"addonsPrice\": 0,\n            \"category\": \"Specials\",\n            \"category_id\": \"18\",\n            \"category_weight\": null,\n            \"description\": \"Gedünsteter Lachs\",\n            \"grandTotal\": 3.2,\n            \"id\": \"87\",\n            \"image\": \"https://www.gokidogo.de/images/menu/2867.png\",\n            \"isSelected\": true,\n            \"is_addon\": 0,\n            \"maxaddon\": 0,\n            \"name\": \"Shake Gunkan\",\n            \"pax\": \"\",\n            \"price\": 3.2,\n            \"product_id\": 9560,\n            \"quantity\": 1,\n            \"sku\": \"SS087\",\n            \"tax_rate\": 7\n        },\n        {\n            \"actual_addon_price\": 0,\n            \"addons\": \"\",\n            \"addonsPrice\": 0,\n            \"category\": \"Specials\",\n            \"category_id\": \"18\",\n            \"category_weight\": null,\n            \"description\": \"Gefüllte Tofutasche\",\n            \"grandTotal\": 4.6,\n            \"id\": \"86\",\n            \"image\": \"https://www.gokidogo.de/images/menu/2808.png\",\n            \"isSelected\": true,\n            \"is_addon\": 0,\n            \"maxaddon\": 0,\n            \"name\": \"Inari\",\n            \"pax\": \"\",\n            \"price\": 2.3,\n            \"product_id\": 7662,\n            \"quantity\": 2,\n            \"sku\": \"SS086\",\n            \"tax_rate\": 7\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://testapp.gokidogo.com/webapi/api.php/checkout_trim",
+					"protocol": "https",
+					"host": [
+						"testapp",
+						"gokidogo",
+						"com"
+					],
+					"path": [
+						"webapi",
+						"api.php",
+						"checkout_trim"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "invoice_email",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"Apikey\": \"72c2322fd35fb30e874a0e1a046e5ba900a9a150a0f36cdc0817e615f837e2d266a3a10e265b6de3e9d0065ceb1621b0dd9c4cde22a91830b8c91ac0cf1df9c0\",\n\"order_type\": \"Delivery\",\n\"DeviceId\": \"6e2a1f39237cca2a\",\n\"orderno\": \"GK20230721-00001\"\n}"
+				},
+				"url": {
+					"raw": "https://testapp.gokidogo.com/webapi/api.php/invoice_email",
+					"protocol": "https",
+					"host": [
+						"testapp",
+						"gokidogo",
+						"com"
+					],
+					"path": [
+						"webapi",
+						"api.php",
+						"invoice_email"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "orderdetail",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"apikey\": \"321312364633\",\n    \"deviceId\" : \"321312364633\",\n    \"orderid\":\"GK20230203-011\",\n    \"email\" : \"asho251@gmail.com\",\n    \"user\" : \"\"\n}"
+				},
+				"url": {
+					"raw": "https://testapp.gokidogo.com/webapi/api.php/getorderdetail",
+					"protocol": "https",
+					"host": [
+						"testapp",
+						"gokidogo",
+						"com"
+					],
+					"path": [
+						"webapi",
+						"api.php",
+						"getorderdetail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "trackorder",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"apikey\": \"321312364633\",\n    \"deviceid\" : \"321312364633\",\n    \"orderid\":\"GK20230130-002\",\n    \"email\" : \"asho251@gmail.com\",\n    \"user\" : \"\"\n}"
+				},
+				"url": {
+					"raw": "https://testapp.gokidogo.com/webapi/api.php/trackorder",
+					"protocol": "https",
+					"host": [
+						"testapp",
+						"gokidogo",
+						"com"
+					],
+					"path": [
+						"webapi",
+						"api.php",
+						"trackorder"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
