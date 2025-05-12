@@ -46,18 +46,18 @@ body {
 }
 
 /* Filters */
-.partner-wrapper {
+.partner-section {
     padding: 20px 5%;
 }
 
-.partner-filters {
+.service-filters {
     display: flex;
     gap: 20px;
     margin-bottom: 25px;
     flex-wrap: wrap;
 }
 
-.radio-btn {
+.filter-btn {
     padding: 8px 18px;
     border: 2px solid #ccc;
     border-radius: 20px;
@@ -68,18 +68,18 @@ body {
     transition: all 0.3s ease;
 }
 
-.radio-btn input[type="radio"] {
+.filter-btn input[type="radio"] {
     display: none;
 }
 
-.radio-btn.active {
+.filter-btn.active {
     background-color: #e8f5e9;
     color: #2e7d32;
     border-color: #2e7d32;
 }
 
 /* Promo Banner */
-.partner-banner {
+.promo-banner {
     background-color: #2e7d32;
     color: white;
     font-size: 1.1rem;
@@ -92,12 +92,12 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.partner-icon {
+.promo-icon {
     font-size: 24px;
 }
 
 /* Card container */
-.card-container {
+.card-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -105,8 +105,8 @@ body {
     padding: 20px;
 }
 
-/* Card box */
-.box {
+/* Card */
+.partner-card {
     width: 430px;
     background: white;
     border-radius: 5px;
@@ -118,25 +118,25 @@ body {
     flex-direction: column;
 }
 
-.box:hover {
+.partner-card:hover {
     transform: translateY(-5px);
 }
 
 /* Image section */
-.card-image {
+.partner-image {
     position: relative;
     width: 100%;
     height: 210px;
 }
 
-.card-image img {
+.image {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
 /* Cuisine tag */
-.cuisine-tag {
+.tag {
     position: absolute;
     top: 10px;
     left: 10px;
@@ -151,7 +151,7 @@ body {
 }
 
 /* Info section below image */
-.card-info {
+.partner-details {
     padding: 16px;
     background-color: #fff;
 }
@@ -167,7 +167,7 @@ body {
     margin-bottom: 8px;
 }
 
-.restaurant-name {
+.name {
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 4px;
@@ -178,8 +178,8 @@ body {
     color: #666;
 }
 
-/* Takeaway/Delivery */
-.options {
+/* Takeaway/Delivery options */
+.service-options {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -189,7 +189,7 @@ body {
     color: #444;
 }
 
-.options div {
+.service-options div {
     display: flex;
     align-items: center;
     gap: 6px;
@@ -216,7 +216,7 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .box {
+    .partner-card {
         width: 90%;
     }
 }
