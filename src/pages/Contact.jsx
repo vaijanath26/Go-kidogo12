@@ -1,10 +1,14 @@
-import React from "react";
+import { useEffect } from 'react';
 import { FaLifeRing, FaMapMarkerAlt, FaCloudUploadAlt } from "react-icons/fa";
 import "./Contact.css"; 
 import ContactForm from "./ContactForm";
 import "./styles.css";
 
 const ContactSection = () => {
+   // Scroll to top on component mount
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   const contactInfo = [
     {
       icon: <FaLifeRing className="contact-icon" />,

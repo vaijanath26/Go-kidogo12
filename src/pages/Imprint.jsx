@@ -1,20 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Imprint.css";
 import "./styles.css";
 
 const Imprint = () => {
+  // Scroll to top on component mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <div className="abcd">
         <div className="overlay"></div>
         <h1>Imprint</h1>
       </div>
-      
+
       <div className="wave-container1">
-      <div className="wave-element wave-1"></div>
-      <div className="wave-element wave-2"></div>
-      <div className="wave-element wave-3"></div>
-    </div>
+        <div className="wave-element wave-1"></div>
+        <div className="wave-element wave-2"></div>
+        <div className="wave-element wave-3"></div>
+      </div>
 
       <div className="imprint-container">
         <div className="imprint-section">
@@ -75,7 +80,6 @@ const Imprint = () => {
           <div className="imprint-divider">
             <p>
               As a service provider, we are responsible for our own content on these pages under general law in accordance with Section 7 (1) TMG...
-              [rest unchanged]
             </p>
           </div>
         </div>
@@ -85,7 +89,6 @@ const Imprint = () => {
           <div className="imprint-divider">
             <p>
               Our offer contains links to external websites over which we have no influence...
-              [rest unchanged]
             </p>
           </div>
         </div>
@@ -95,7 +98,6 @@ const Imprint = () => {
           <div className="imprint-divider">
             <p>
               The content and works on these pages created by the site operator are subject to German copyright law...
-              [rest unchanged]
             </p>
           </div>
         </div>
