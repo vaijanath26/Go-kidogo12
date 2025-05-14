@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Partner.css";
 import "./styles.css";
@@ -7,6 +7,10 @@ import Records from "./records.json"; // Replace with your actual JSON file
 export default function PartnerPage() {
   const [activeService, setActiveService] = useState("All");
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   const filteredPartners =
     activeService === "All"
       ? Records

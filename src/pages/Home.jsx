@@ -39,7 +39,20 @@ function Home() {
     navigate(`/partner?category=${category}`);
   };
 
+  // Debounce utility
+  const debounce = (func, wait) => {
+    let timeout;
+    return (...args) => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func(...args), wait);
+    };
+  };
+
   useEffect(() => {
+    // Scroll to top
+    window.scrollTo(0, 0);
+
+    // Handle responsive card count
     const updateVisibleCards = () => {
       if (window.matchMedia("(max-width: 600px)").matches) {
         setVisibleCards(2);
@@ -70,14 +83,6 @@ function Home() {
     if (currentIndex > 0) {
       setCurrentIndex((prev) => prev - 1);
     }
-  };
-
-  const debounce = (func, wait) => {
-    let timeout;
-    return (...args) => {
-      clearTimeout(timeout);
-      timeout = setTimeout(() => func(...args), wait);
-    };
   };
 
   return (
@@ -138,12 +143,12 @@ function Home() {
           <Restau_card />
 
           <div className="banner">
-          <div className="overlay"></div>
+            <div className="overlay"></div>
             <div className="wrapper">
               <div>
                 <medium>GokidoGo Delivery</medium>
                 <h1>We Deliver to your Office</h1>
-                <h2>Enjoy a tasty food in minutes!</h2><br/>
+                <h2>Enjoy a tasty food in minutes!</h2><br />
                 <a href="/restaurants" className="btn-1 gradient">Start Now!</a>
               </div>
             </div>
