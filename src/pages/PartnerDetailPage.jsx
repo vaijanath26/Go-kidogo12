@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./PartnerDetailPage.css";
 import logo from '../assets/logo.png';
 
@@ -7,7 +7,6 @@ export default function PartnerDetailPage() {
   const [selectedOption, setSelectedOption] = useState("");
   const [total, setTotal] = useState(0);
 
-  // Menu items for Cafe and Burger categories
   const cafeItems = [
     { name: "Espresso", price: 2.5 },
     { name: "Hot Chocolate", price: 3.9 },
@@ -18,25 +17,29 @@ export default function PartnerDetailPage() {
     { name: "Cheese Burger", price: 6.2 },
   ];
 
-  // Handle adding items to the total price
   const handleAdd = (price) => {
     setTotal((prev) => prev + price);
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
       {/* Cafe Section - Header with Overlay */}
       <div className="Cafe">
         <div className="overlay"></div>
-        
         <h1>
           <div className="logo-container">
-      <img src={logo} alt="Logo" className="logo" />
-    </div>
+            <img src={logo} alt="Logo" className="logo" />
+          </div>
           Lindbergh`s Cafe <br />
-           <p>Amelia-Mary-Earhart-Straße 8<br />
-          Min. 12 €<br />
-          German, Italian, French, Continental</p>
+          <p>
+            Amelia-Mary-Earhart-Straße 8<br />
+            Min. 12 €<br />
+            German, Italian, French, Continental
+          </p>
         </h1>
       </div>
 
@@ -62,7 +65,6 @@ export default function PartnerDetailPage() {
         <div className="menu-container">
           <h2 className="menu-category-title">{selectedCategory}</h2>
           <div className="menu-grid">
-            {/* Render menu items based on selected category */}
             {(selectedCategory === "Cafe" ? cafeItems : burgerItems).map((item, index) => (
               <div key={index} className="menu-item-card">
                 <h3 className="item-name">{item.name}</h3>

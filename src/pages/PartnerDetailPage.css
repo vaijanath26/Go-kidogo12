@@ -17,7 +17,6 @@
 .main-container1 {
   display: flex;
   align-items: flex-start; /* Align items to the top */
-  /* background-image: url('../assets/p60.jpg'); */
   gap: 20px; /* Spacing between the containers */
   max-width: 1200px; /* Adjust as needed */
   margin: 20px auto;
