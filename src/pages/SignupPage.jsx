@@ -48,6 +48,30 @@ const SignupPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Required fields to check
+    const requiredFields = [
+      "title",
+      "firstname",
+      "lastname",
+      "gender",
+      "mobile",
+      "email",
+      "passwd",
+      "confirmPassword",
+    ];
+
+    for (let field of requiredFields) {
+      if (!formData[field].trim()) {
+        toast.error(`Please fill in the ${field} field.`);
+        return;
+      }
+    }
+
+    if (!formData.terms) {
+      toast.error("You must accept the terms and conditions.");
+      return;
+    }
+
     if (formData.passwd !== formData.confirmPassword) {
       toast.error("Passwords do not match!");
       return;
