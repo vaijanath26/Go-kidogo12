@@ -214,7 +214,7 @@ const SignupPage = () => {
             <label>Subscribe to our newsletter</label>
           </div>
 
-          <button type="submit">Create an account</button>
+          <button type="submit" className="create-account-btn">Create an account</button>
 
           <p className="signin-link">
             Already have an account? <a href="#">Sign in</a>
