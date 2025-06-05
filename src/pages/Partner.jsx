@@ -1,20 +1,33 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./Partner.css";
 import "./styles.css";
-import Records from "./records.json"; // Replace with your actual JSON file
+import Records from "./records.json"; // Your JSON data
 
 export default function PartnerPage() {
+  const location = useLocation();
+  const searchQuery = location.state?.searchQuery?.toLowerCase() || "";
+
   const [activeService, setActiveService] = useState("All");
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  
-  const filteredPartners =
+
+  // Filter by service first
+  let filteredPartners =
     activeService === "All"
       ? Records
       : Records.filter((p) => p.services.includes(activeService));
+
+  // If there's a search query, further filter by name or cuisine matching searchQuery
+  if (searchQuery) {
+    filteredPartners = filteredPartners.filter(
+      (p) =>
+        p.name.toLowerCase().includes(searchQuery) ||
+        (p.cuisine && p.cuisine.toLowerCase().includes(searchQuery))
+    );
+  }
 
   return (
     <>
@@ -64,25 +77,28 @@ export default function PartnerPage() {
 
       {/* Partner Cards */}
       <div className="card-list">
-        {filteredPartners.map((partner, index) => (
-          <Link to={`/partner/${partner.id}`} key={index} className="partner-card-link">
-            <div className="partner-card">
-              <div className="partner-image">
-                <img src={partner.image} alt={partner.name} className="image" />
-                <div className="tag">{partner.cuisine}</div>
+        {filteredPartners.length > 0 ? (
+          filteredPartners.map((partner, index) => (
+            <Link to={`/partner/${partner.id}`} key={index} className="partner-card-link">
+              <div className="partner-card">
+                <div className="partner-image">
+                  <img src={partner.image} alt={partner.name} className="image" />
+                  <div className="tag">{partner.cuisine}</div>
+                </div>
+                <div className="partner-details">
+                  <div className="name">{partner.name}</div>
+                  <div className="address">{partner.address}</div>
+                </div>
+                <div className="service-options">
+                  <div><i className="fas fa-shopping-bag"></i>🚴‍♂️ Takeaway</div>
+                  <div><i className="fas fa-biking"></i>🛍️ Delivery</div>
+                </div>
               </div>
-              <div className="partner-details">
-                {/* Removed the open button */}
-                <div className="name">{partner.name}</div>
-                <div className="address">{partner.address}</div>
-              </div>
-              <div className="service-options">
-                <div><i className="fas fa-shopping-bag"></i>🚴‍♂️ Takeaway</div>
-                <div><i className="fas fa-biking"></i>🛍️ Delivery</div>
-              </div>
-            </div>
-          </Link>
-        ))}
+            </Link>
+          ))
+        ) : (
+          <p style={{ padding: '20px' }}>No partners found matching your criteria.</p>
+        )}
       </div>
     </>
   );

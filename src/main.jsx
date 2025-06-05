@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+
 import {
-  Route,
   RouterProvider,
   createBrowserRouter,
-  createRoutesFromElements
+  createRoutesFromElements,
+  Route
 } from 'react-router-dom';
 
 // Layout and Pages
@@ -25,6 +26,7 @@ import Faq from './pages/Faq.jsx';
 import Privacy from './pages/Privacy.jsx';
 import PartnerDetailPage from './pages/PartnerDetailPage.jsx';
 import Navbar from './component/Navbar.jsx';
+import SearchResults from './component/SearchResults';
 
 // Optional: Custom error component
 const ErrorBoundary = () => {
@@ -55,7 +57,7 @@ const router = createBrowserRouter(
       <Route path="privacy" element={<Privacy />} />
       <Route path="partner/:partnerId" element={<PartnerDetailPage />} />
       <Route path="Navbar" element={<Navbar />} />
-      
+      <Route path="search" element={<SearchResults />} />
     </Route>
   )
 );

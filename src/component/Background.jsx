@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './Background.module.css';
+import restaurantData from '../data/restaurants.json'; // Adjust path if needed
 
 const Background = () => {
   const [query, setQuery] = useState('');
@@ -17,8 +18,27 @@ const Background = () => {
   const navigate = useNavigate();
 
   const handleSearch = () => {
-    if (query.trim()) {
-      navigate(`/search?query=${encodeURIComponent(query.trim())}`);
+    const trimmedQuery = query.trim().toLowerCase();
+
+    if (trimmedQuery) {
+      const match = restaurantData.find(
+        (resto) =>
+          resto.name.toLowerCase().includes(trimmedQuery) ||
+          (resto.cuisine && resto.cuisine.toLowerCase().includes(trimmedQuery))
+      );
+
+      if (match) {
+        // Navigate to PartnerPage with searchQuery in state
+        navigate('/partner', { state: { searchQuery: trimmedQuery } });
+      } else {
+        alert('No restaurant found for your search.');
+      }
+    }
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch();
     }
   };
 
@@ -52,10 +72,11 @@ const Background = () => {
         <div className={styles.searchBox}>
           <input
             type="text"
-            placeholder="Your Address or postal code"
+            placeholder="Search by restaurant or cuisine"
             className={styles.inputField}
             value={query}
             onChange={(e) => setQuery(e.target.value)}
+            onKeyDown={handleKeyPress}
           />
           <button className={styles.SearchBTN} onClick={handleSearch}>
             Search
@@ -63,7 +84,7 @@ const Background = () => {
         </div>
 
         <h4 className={styles.subheading}>
-          Trending:- Pizza, Sushi, Burgher, Nudeln, Indisch, Thai uvm
+          Trending:- Pizza, Sushi, Burger, Nudeln, Indisch, Thai uvm
         </h4>
       </div>
 
