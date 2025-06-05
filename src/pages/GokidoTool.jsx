@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import './GokidoTool.css';
 import devices from "../assets/headergokidogotools.png";
 import q1 from "../assets/gokidogotools-01.png";
@@ -9,6 +9,10 @@ import q5 from "../assets/gokidogotools-05.png";
 
 const GokidoTool = () => {
   const formRef = useRef(null);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleButtonClick = () => {
     if (formRef.current) {
