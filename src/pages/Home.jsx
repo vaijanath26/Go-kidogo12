@@ -39,7 +39,6 @@ function Home() {
     navigate(`/partner?category=${category}`);
   };
 
-  // Debounce utility
   const debounce = (func, wait) => {
     let timeout;
     return (...args) => {
@@ -49,10 +48,8 @@ function Home() {
   };
 
   useEffect(() => {
-    // Scroll to top
     window.scrollTo(0, 0);
 
-    // Handle responsive card count
     const updateVisibleCards = () => {
       if (window.matchMedia("(max-width: 600px)").matches) {
         setVisibleCards(2);
@@ -88,31 +85,31 @@ function Home() {
   return (
     <>
       <Background />
-      <div className="main-container">
-        <h2 className="title">Popular Categories</h2>
-        <div className="carousel">
+      <div className="home-main-container">
+        <h2 className="home-title">Popular Categories</h2>
+        <div className="home-carousel">
           <button
-            className="arrow arrow-left"
+            className="home-arrow home-arrow-left"
             onClick={prevSlide}
             aria-label="Previous Slide"
             disabled={currentIndex === 0}
           >
-            <ChevronLeftIcon className="icon" />
+            <ChevronLeftIcon className="home-icon" />
           </button>
-          <div className="card-container">
+          <div className="home-card-container">
             <div
-              className="card-wrapper"
+              className="home-card-wrapper"
               style={{ transform: `translateX(-${currentIndex * cardWidth}px)` }}
             >
               {cardData.map((item, index) => (
-                <div className="card" key={index} onClick={() => handleCardClick(item.title)}>
+                <div className="home-card" key={index} onClick={() => handleCardClick(item.title)}>
                   <img
                     src={item.imgSrc}
                     alt={`Delicious ${item.title}`}
-                    className="card-image"
+                    className="home-card-image"
                     loading="lazy"
                   />
-                  <div className="card-content">
+                  <div className="home-card-content">
                     <h3>{item.title}</h3>
                     <p>View All</p>
                   </div>
@@ -121,35 +118,35 @@ function Home() {
             </div>
           </div>
           <button
-            className="arrow arrow-right"
+            className="home-arrow home-arrow-right"
             onClick={nextSlide}
             aria-label="Next Slide"
             disabled={currentIndex + visibleCards >= totalCards}
           >
-            <ChevronRightIcon className="icon" />
+            <ChevronRightIcon className="home-icon" />
           </button>
         </div>
       </div>
 
-      <div className="bg-gray">
-        <div className="content-container">
-          <div className="main-title">
+      <div className="home-bg-gray">
+        <div className="home-content-container">
+          <div className="home-main-title">
             <span><em></em></span>
             <h2>Choose from the most popular restaurants in<br /> your neighborhood.</h2>
-            <p className="description">Order, enjoy and support your local heroes!</p>
-            <a href="/restaurants" className="link">All restaurants →</a>
+            <p className="home-description">Order, enjoy and support your local heroes!</p>
+            <a href="/restaurants" className="home-link">All restaurants →</a>
           </div>
 
           <Restau_card />
 
-          <div className="banner">
-            <div className="overlay"></div>
-            <div className="wrapper">
+          <div className="home-banner">
+            <div className="home-overlay"></div>
+            <div className="home-wrapper">
               <div>
                 <medium>GokidoGo Delivery</medium>
                 <h1>We Deliver to your Office</h1>
                 <h2>Enjoy a tasty food in minutes!</h2><br />
-                <a href="/restaurants" className="btn-1 gradient">Start Now!</a>
+                <a href="/restaurants" className="home-btn home-gradient">Start Now!</a>
               </div>
             </div>
           </div>
