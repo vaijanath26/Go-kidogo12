@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-
 import {
+  Route,
   RouterProvider,
   createBrowserRouter,
-  createRoutesFromElements,
-  Route
+  createRoutesFromElements
 } from 'react-router-dom';
 
 // Layout and Pages
@@ -25,8 +24,13 @@ import Cookie from './pages/Cookie.jsx';
 import Faq from './pages/Faq.jsx';
 import Privacy from './pages/Privacy.jsx';
 import PartnerDetailPage from './pages/PartnerDetailPage.jsx';
-import Navbar from './component/Navbar.jsx';
-import SearchResults from './component/SearchResults';
+import RestaurantList from './pages/RestaurantList.jsx';
+import RestaurantMenu from './pages/RestaurantMenu.jsx';
+import OrderDetailsForm from "./pages/OrderDetailsForm";
+import OrderConfirmation from "./pages/OrderConfirmation";
+import RestaurantDetail from './pages/RestaurantDetail.jsx';
+
+
 
 // Optional: Custom error component
 const ErrorBoundary = () => {
@@ -45,6 +49,8 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path="city" element={<City />} />
       <Route path="partner" element={<Partner />} />
+      <Route path="/restaurants" element={<RestaurantList />} />
+      <Route path="restaurant/:id" element={<RestaurantMenu />} />
       <Route path="about" element={<About />} />
       <Route path="contact" element={<Contact />} />
       <Route path="gokido-tool" element={<GokidoTool />} />
@@ -55,9 +61,11 @@ const router = createBrowserRouter(
       <Route path="cookie" element={<Cookie />} />
       <Route path="faq" element={<Faq />} />
       <Route path="privacy" element={<Privacy />} />
+      <Route path="order-details" element={<OrderDetailsForm />} />
+      <Route path="order-confirmation" element={<OrderConfirmation />} />
       <Route path="partner/:partnerId" element={<PartnerDetailPage />} />
-      <Route path="Navbar" element={<Navbar />} />
-      <Route path="search" element={<SearchResults />} />
+      
+      
     </Route>
   )
 );
