@@ -96,15 +96,16 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
-  padding: 20px;
+  gap: 25px;
+  padding: 10px;
 }
 
 /* Card box */
 .box {
-  width: 300px;
+  width: 430px; /* increased from 300px */
+  height: auto;
   background: white;
-  border-radius: 12px;
+  border-radius: 5px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease;

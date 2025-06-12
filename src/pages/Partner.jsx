@@ -80,8 +80,8 @@ const PartnerPage = () => {
               <div className="address">{record.address}</div>
             </div>
             <div className="options">
-              <div><i className="fas fa-shopping-bag"></i>Takeaway</div>
-              <div><i className="fas fa-biking"></i>Delivery</div>
+              <div><i className="fas fa-shopping-bag"></i>🛍️ Takeaway</div>
+              <div><i className="fas fa-biking"></i>🚴 Delivery</div>
             </div>
           </div>
         ))}
