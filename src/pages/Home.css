@@ -1,18 +1,18 @@
 /* Global Styles */
-.home-main-container {
+.home-container {
   max-width: 1400px;
   margin: 0 auto;
   padding: 20px;
   text-align: center;
 }
 
-.home-content-container {
+.home-content-wrapper {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-.home-title {
+.home-section-title {
   color: #278d05;
   font-size: 30px;
   font-weight: bold;
@@ -20,8 +20,12 @@
   margin-bottom: 20px;
 }
 
-/* Carousel Styles */
-.home-carousel {
+.home-section-title--spacing-top {
+  margin-top: 40px; /* Equivalent to mt-10 in Tailwind, adjust if needed */
+}
+
+/* Category Carousel Styles */
+.category-carousel {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,20 +34,20 @@
   padding: 0 50px;
 }
 
-.home-card-container {
+.carousel-card-container {
   display: flex;
   width: 100%;
   overflow: hidden;
 }
 
-.home-card-wrapper {
+.carousel-card-wrapper {
   display: flex;
   gap: 20px;
   transition: transform 0.5s ease-in-out;
 }
 
-/* Card Styles */
-.home-card {
+/* Category Card Styles */
+.category-card {
   position: relative;
   width: 210px;
   height: 280px;
@@ -55,27 +59,40 @@
   transition: transform 0.3s ease-in-out;
 }
 
-.home-card:hover {
+.category-card:hover {
   transform: scale(1.05);
 }
 
-.home-card-image {
+.category-card__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.home-card-content {
+.category-card__content {
   position: absolute;
   bottom: 0;
   width: 100%;
   color: #ffffff;
   padding: 15px;
   text-align: center;
+  /* Adding a subtle background for better text readability on image */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
 }
 
-/* Arrow Styles */
-.home-arrow {
+.category-card__content h3 {
+  margin: 0;
+  font-size: 1.25rem; /* Adjust as needed */
+}
+
+.category-card__content p {
+  margin: 0;
+  font-size: 0.9rem; /* Adjust as needed */
+  opacity: 0.8;
+}
+
+/* Carousel Arrow Styles */
+.carousel-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -93,125 +110,114 @@
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.home-arrow:hover {
+.carousel-arrow:hover {
   background-color: #e0e0e0;
   transform: translateY(-50%) scale(1.1);
 }
 
-.home-arrow:disabled {
+.carousel-arrow:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.home-arrow-left {
+.carousel-arrow--left {
   left: -20px;
 }
 
-.home-arrow-right {
+.carousel-arrow--right {
   right: -20px;
 }
 
-.home-icon {
+.carousel-arrow__icon {
   color: #333;
   width: 20px;
   height: 20px;
 }
 
-/* Responsive Design */
+/* Responsive Design for Carousel */
 @media (max-width: 1024px) {
-  .home-card {
+  .category-card {
     width: 180px;
     height: 240px;
   }
 
-  .home-arrow-left {
+  .carousel-arrow--left {
     left: -10px;
   }
 
-  .home-arrow-right {
+  .carousel-arrow--right {
     right: -10px;
   }
 }
 
 @media (max-width: 600px) {
-  .home-card {
+  .category-card {
     width: 150px;
     height: 200px;
   }
 
-  .home-arrow {
+  .carousel-arrow {
     width: 30px;
     height: 30px;
-    font-size: 16px;
+    font-size: 16px; /* Adjusted for smaller arrows */
   }
 
-  .home-arrow-left {
+  .carousel-arrow--left {
     left: -5px;
   }
 
-  .home-arrow-right {
+  .carousel-arrow--right {
     right: -5px;
   }
 }
 
-/* Background Section */
-.home-bg-gray {
+/* Section Background */
+.home-background-gray {
   background-color: #f9fafb;
   padding: 60px 0;
 }
 
-.home-main-title {
+/* Main Promotion Section */
+.home-main-promo {
   text-align: left;
   margin-bottom: 40px;
 }
 
-.home-main-title h2 {
+.home-main-promo h2 {
   font-size: 30px;
   color: #367337;
   font-weight: 700;
 }
 
-.home-main-title p {
+.home-main-promo__description {
   color: #9a92c2;
   font-size: 20px;
   margin-top: 5px;
 }
 
-.home-main-title h3 {
-  color: floralwhite;
-  margin-top: 5px;
-}
-
-.home-link {
+.home-main-promo__link {
   color: #166534;
   font-weight: 600;
   text-decoration: none;
-  float: right;
+  float: right; /* Consider if float is the best solution for layout */
 }
 
 /* Banner Section */
-.home-banner {
+.home-banner-section {
   position: relative;
-  border-radius: 12px;
+  border-radius: 5px;
   overflow: hidden;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 370px;
-  width: 100%;
-  background-image: url("../assets/banner_bg_desktop.jpg");
+  width: 1230px;
+  left: auto;
+  right: 30px;
+  background-image: url("../assets/banner_bg_desktop.jpg"); /* Ensure this path is correct */
 }
 
-.home-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-.home-wrapper {
+.home-banner-section__content {
   position: relative;
   z-index: 2;
   height: 100%;
@@ -221,7 +227,29 @@
   color: #ffffff;
 }
 
-.home-btn {
+.home-banner-section__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.home-banner-section__subheading {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.home-banner-section h1 {
+  font-size: 2.5rem; /* Adjust as needed */
+  margin-bottom: 10px;
+}
+
+.home-banner-section h2 {
+  font-size: 1.8rem; /* Adjust as needed */
+  margin-bottom: 20px; /* Added spacing */
+}
+
+.home-banner-section__button {
   background: linear-gradient(to right, #bee25a, #357135);
   color: #ffffff;
   border: none;
@@ -230,22 +258,147 @@
   cursor: pointer;
   transition: background 0.3s ease;
   text-decoration: none;
+  display: inline-block; /* Ensure it behaves like a button */
 }
 
-.home-btn:hover {
+
+.home-banner-section__button:hover {
   filter: brightness(1.1);
 }
 
 @media (max-width: 768px) {
-  .home-main-title h2 {
+  .home-main-promo h2 {
     font-size: 24px;
   }
 
-  .home-wrapper {
+  .home-banner-section__content {
     padding: 20px;
   }
 
-  .home-btn {
+  .home-banner-section__button {
     padding: 6px 15px;
+  }
+
+  .home-banner-section h1 {
+    font-size: 1.5rem;
+  }
+
+  .home-banner-section h2 {
+    font-size: 1rem;
+  }
+}
+
+
+/* Restaurant Grid */
+.restaurant-grid {
+  display: grid;
+  gap: 1.5rem; /* Spacing between cards */
+  padding: 1rem;
+  text-align: center;
+  justify-content: center; 
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 1500px; /* Example: A good width for two reasonable-sized cards side-by-side */
+  margin-left: 30px; /* Center the grid itself */
+  margin-right: auto; /* Center the grid itself */
+}
+
+/* Responsive adjustments for the grid */
+@media (max-width: 1024px) { /* On medium screens, keep two columns */
+  .restaurant-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 800px; /* Example for smaller screens */
+  }
+}
+
+@media (max-width: 768px) { /* On smaller screens, stack them vertically */
+  .restaurant-grid {
+    grid-template-columns: repeat(1, 1fr); /* One column on smaller screens */
+    max-width: 400px; /* Optional: limit width of single column cards for readability */
+  }
+}
+
+/* Restaurant Card (Already configured to be a horizontal layout internally) */
+.restaurant-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);/* This is already set to arrange image and details horizontally */
+  align-items: flex-start;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  min-width: 350px;
+  width: 100px; /* Let grid control width */
+  display: flex;
+  flex-direction: row;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-5px);
+}
+
+.restaurant-card__image {
+  width: 80px;
+  height: 160px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.restaurant-card:hover .restaurant-card__image {
+  transform: scale(1.02);
+}
+
+.restaurant-card__details h3 {
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  color: #1f7a1f;
+  font-weight: bold;
+}
+
+.restaurant-card__details p {
+  font-size: 0.9rem;
+  color: #444;
+  margin-top: 0.25rem;
+  line-height: 1.3;
+}
+
+/* Status Badges (moved from inline styles) */
+.restaurant-card__status--active {
+  color: green;
+}
+
+.restaurant-card__status--inactive {
+  color: red;
+}
+
+/* Inactive card appearance */
+.restaurant-card--inactive {
+  opacity: 0.6;
+  pointer-events: auto; /* Keep pointer events to allow click, but visually show inactive */
+}
+
+/* Loading Text */
+.loading-text {
+  margin-top: 2rem;
+  font-size: 1.125rem;
+  color: #6b7280;
+  text-align: center;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .restaurant-card {
+    padding: 0.75rem;
+  }
+
+  .restaurant-card__details h3 {
+    font-size: 1rem;
+  }
+
+  .restaurant-card__details p {
+    font-size: 0.8rem;
+  }
+
+  .restaurant-card__image {
+    height: 140px;
   }
 }
