@@ -155,12 +155,11 @@ body {
 .status-badge {
   background-color: #28a745;
   color: white;
-  font-size: 12px;
-  padding: 4px 10px;
-  border-radius: 20px;
+  font-size: 14px;
+  padding: 1px 10px;
+  border-radius: 5px;
   display: inline-block;
   font-weight: 600;
-  margin-bottom: 8px;
 }
 
 .restaurant-name {
