@@ -296,7 +296,7 @@
   padding: 1rem;
   text-align: center;
   justify-content: center; 
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   max-width: 1500px; /* Example: A good width for two reasonable-sized cards side-by-side */
   margin-left: 30px; /* Center the grid itself */
   margin-right: auto; /* Center the grid itself */
@@ -336,22 +336,24 @@
   transform: translateY(-5px);
 }
 
-.restaurant-card__image {
-  width: 80px;
-  height: 160px;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
 
+/* For restaurant images */
+.restaurant-card__image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  margin-right: 0.5rem;
+  border-radius: 10px 10px 0 0;
+}
 .restaurant-card:hover .restaurant-card__image {
   transform: scale(1.02);
 }
 
 .restaurant-card__details h3 {
   font-size: 1.1rem;
-  margin-top: 0.5rem;
   color: #1f7a1f;
   font-weight: bold;
+  text-align: left;
 }
 
 .restaurant-card__details p {
@@ -359,6 +361,7 @@
   color: #444;
   margin-top: 0.25rem;
   line-height: 1.3;
+  text-align: left;
 }
 
 /* Status Badges (moved from inline styles) */
