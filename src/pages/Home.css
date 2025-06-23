@@ -296,10 +296,10 @@
   padding: 1rem;
   text-align: center;
   justify-content: center; 
-  grid-template-columns: repeat(3, 1fr);
-  max-width: 1500px; /* Example: A good width for two reasonable-sized cards side-by-side */
+  grid-template-columns: repeat(2, 1fr);
+   /* Example: A good width for two reasonable-sized cards side-by-side */
   margin-left: 30px; /* Center the grid itself */
-  margin-right: auto; /* Center the grid itself */
+  margin-right: 50px; /* Center the grid itself */
 }
 
 /* Responsive adjustments for the grid */
@@ -320,7 +320,7 @@
 /* Restaurant Card (Already configured to be a horizontal layout internally) */
 .restaurant-card {
   background-color: #fff;
-  border-radius: 8px;
+  border-radius: 3px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);/* This is already set to arrange image and details horizontally */
   align-items: flex-start;
   overflow: hidden;
@@ -330,6 +330,7 @@
   width: 100px; /* Let grid control width */
   display: flex;
   flex-direction: row;
+
 }
 
 .restaurant-card:hover {
@@ -343,7 +344,6 @@
   height: 180px;
   object-fit: cover;
   margin-right: 0.5rem;
-  border-radius: 10px 10px 0 0;
 }
 .restaurant-card:hover .restaurant-card__image {
   transform: scale(1.02);
