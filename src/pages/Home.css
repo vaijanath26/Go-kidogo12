@@ -14,14 +14,14 @@
 
 .home-section-title {
   color: #278d05;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 20px;
 }
 
 .home-section-title--spacing-top {
-  margin-top: 40px; /* Equivalent to mt-10 in Tailwind, adjust if needed */
+  margin-top: 30px; /* Equivalent to mt-10 in Tailwind, adjust if needed */
 }
 
 /* Category Carousel Styles */
@@ -82,7 +82,7 @@
 
 .category-card__content h3 {
   margin: 0;
-  font-size: 1.25rem; /* Adjust as needed */
+  font-size: 1rem; /* Adjust as needed */
 }
 
 .category-card__content p {
@@ -191,8 +191,8 @@
 
 .home-main-promo__description {
   color: #9a92c2;
-  font-size: 20px;
-  margin-top: 5px;
+  font-size: 15px;
+  margin-top: 3px;
 }
 
 .home-main-promo__link {
@@ -211,9 +211,9 @@
   background-position: center;
   background-repeat: no-repeat;
   height: 370px;
-  width: 1230px;
+  width: 1310px;
   left: auto;
-  right: 30px;
+  right: 100px;
   background-image: url("../assets/banner_bg_desktop.jpg"); /* Ensure this path is correct */
 }
 
@@ -288,19 +288,14 @@
   }
 }
 
-
-/* Restaurant Grid */
 .restaurant-grid {
   display: grid;
-  gap: 1.5rem; /* Spacing between cards */
-  padding: 1rem;
-  text-align: center;
-  justify-content: center; 
-  grid-template-columns: repeat(2, 1fr);
-   /* Example: A good width for two reasonable-sized cards side-by-side */
-  margin-left: 30px; /* Center the grid itself */
-  margin-right: 50px; /* Center the grid itself */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
+
+
 
 /* Responsive adjustments for the grid */
 @media (max-width: 1024px) { /* On medium screens, keep two columns */
@@ -319,32 +314,30 @@
 
 /* Restaurant Card (Already configured to be a horizontal layout internally) */
 .restaurant-card {
-  background-color: #fff;
-  border-radius: 3px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);/* This is already set to arrange image and details horizontally */
-  align-items: flex-start;
+  background-color: white;
+  border-radius: 12px;
   overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   cursor: pointer;
-  transition: transform 0.2s ease-in-out;
-  min-width: 350px;
-  width: 100px; /* Let grid control width */
-  display: flex;
-  flex-direction: row;
-
+  transition: transform 0.2s;
 }
+
+
 
 .restaurant-card:hover {
   transform: translateY(-5px);
 }
 
 
+
 /* For restaurant images */
 .restaurant-card__image {
-  width: 100%;
-  height: 180px;
+  width: 280px;       /* ✅ consistent width */
+  height: 100%;       /* ✅ stretch to match card */
   object-fit: cover;
-  margin-right: 0.5rem;
 }
+
+
 .restaurant-card:hover .restaurant-card__image {
   transform: scale(1.02);
 }
@@ -386,7 +379,14 @@
   color: #6b7280;
   text-align: center;
 }
+.restaurant-card__info {
+  padding: 15px;
+}
 
+.restaurant-card__info h3 {
+  margin-bottom: 5px;
+  color: #2e7d32;
+}
 /* Responsive tweaks */
 @media (max-width: 480px) {
   .restaurant-card {
@@ -405,3 +405,81 @@
     height: 140px;
   }
 }
+.restaurant-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.restaurant-horizontal-card {
+  display: flex;
+  width: 48%;
+  background: #fff;
+  border-radius: 1px;
+  box-shadow: 0 0 10px #eee;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.restaurant-horizontal-card:hover {
+  transform: scale(1.01);
+}
+
+.restaurant-horizontal-card__image {
+  width: 170px;
+  height: 120px;
+  object-fit: cover;
+  border-right: 1px solid #eee;
+  border-radius: 0; /* removes any rounded corners */
+}
+
+
+.restaurant-horizontal-card__info {
+  padding: 10px 15px;
+  flex: 1;
+}
+
+.restaurant-horizontal-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.restaurant-horizontal-card__header h3 {
+  color: #2e7d32;
+  margin: 0;
+  font-size: 18px;
+}
+
+.restaurant-horizontal-card__rating {
+  color: #2e7d32;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.restaurant-horizontal-card__cuisine,
+.restaurant-horizontal-card__address {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #444;
+  text-align: left;
+}
+
+.restaurant-horizontal-card__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.restaurant-horizontal-card__status {
+  background: #2e7d32;
+  color: white;
+  padding: 0.6px 9px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+

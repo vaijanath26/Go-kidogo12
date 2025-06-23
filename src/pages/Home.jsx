@@ -61,6 +61,7 @@ function Home() {
       } else {
         setVisibleCards(5);
       }
+      
     };
 
     const debouncedResize = debounce(updateVisibleCards, 100);
@@ -175,53 +176,44 @@ function Home() {
             All restaurants →
           </Link>
           </div>
-        {loading ? (
-          <p>Loading restaurants...</p>
-        ) : (
-          <div className="restaurant-grid">
-            {restaurants.map((rest, i) => (
-              <div
-                key={i}
-                className={`restaurant-card ${rest.Active !== "1" ? "restaurant-card--inactive" : ""}`}
-                onClick={() => handleRestaurantClick(rest.restroid)}
-              >
-                <img
-                  src={rest.image || "https://via.placeholder.com/150"}
-                  alt={rest.name}
-                  className="restaurant-card__image"
-                  loading="lazy"
-                />
-                <div className="restaurant-card__details">
-                  <h3>{rest.name}</h3>
-                  <p>
-                    <strong>Address:</strong> {rest.address || "N/A"}
-                  </p>
-                 <p>
-              <strong>
-               Rating: <span style={{ color: "#367337" }}>★</span>
-               </strong>{" "}
-              {rest.rating
-              ? rest.rating.toFixed(1)
-              : (Math.random() * (9.9 - 8.5) + 8.5).toFixed(1)}
-                  </p>
-                  
-                  <p>
-                    <strong>Open:</strong> {rest.FirstOrder || "N/A"} -{" "}
-                    {rest.LastOrder || "N/A"}
-                  </p>
-                  <p>
-                    <strong>Status:</strong>{" "}
-                    {rest.Active === "1" ? (
-                      <span className="restaurant-card__status--active">Active</span>
-                    ) : (
-                      <span className="restaurant-card__status--inactive">Inactive</span>
-                    )}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
+
+            
+<div className="restaurant-list-container">
+  {restaurants.map((restaurant, index) => (
+    <div className="restaurant-horizontal-card" key={index} onClick={() => handleRestaurantClick(restaurant.restroid)}>
+      <img
+        src={restaurant.image}
+        alt={restaurant.name}
+        className="restaurant-horizontal-card__image"
+      />
+      <div className="restaurant-horizontal-card__info">
+        <div className="restaurant-horizontal-card__header">
+          <h3>{restaurant.name}</h3>
+          <div className="restaurant-horizontal-card__rating">
+  <p>
+    <strong>
+      <span style={{ color: "#66cc66;" }}>★</span>
+    </strong>{" "}
+    {restaurant.rating
+      ? parseFloat(restaurant.rating).toFixed(1)
+      : (Math.random() * (9.9 - 8.5) + 8.5).toFixed(1)}
+  </p>
+</div>
+
+        </div>
+        <p className="restaurant-horizontal-card__cuisine">{restaurant.cuisine}</p>
+        <p className="restaurant-horizontal-card__address">{restaurant.address}</p>
+        <div className="restaurant-horizontal-card__bottom">
+  <p className="restaurant-horizontal-card__status">Open</p>
+</div>
+
+      </div>
+    </div>
+  ))}
+</div>
+
+
+        
       </div>
 
       <div className="home-background-gray">
